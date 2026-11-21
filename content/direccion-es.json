@@ -1,0 +1,597 @@
+{
+  "schema": 1,
+  "id": "mr-simulacro-desatado",
+  "title": "MR- El Simulacro Desatado",
+  "version": "1.0.0",
+  "author": "Manu Romera",
+  "license": "Uso personal · Aventura original © Chaosium / Edge",
+  "settings": {
+    "fade": 3,
+    "motifs": [
+      {
+        "id": "embarque",
+        "label": "Embarque",
+        "icon": "train",
+        "music": {
+          "flag": [
+            "mr-simulacro-desatado",
+            "slug",
+            "escena-1"
+          ]
+        }
+      },
+      {
+        "id": "budapest",
+        "label": "Budapest",
+        "icon": "landmark",
+        "music": {
+          "flag": [
+            "mr-simulacro-desatado",
+            "slug",
+            "escena-2"
+          ]
+        }
+      },
+      {
+        "id": "otro-lado",
+        "label": "El Otro Lado",
+        "icon": "smog",
+        "music": {
+          "flag": [
+            "mr-simulacro-desatado",
+            "slug",
+            "escena-3"
+          ]
+        }
+      },
+      {
+        "id": "mezquita",
+        "label": "Mezquita Velada",
+        "icon": "fire",
+        "music": {
+          "flag": [
+            "mr-simulacro-desatado",
+            "slug",
+            "escena-4"
+          ]
+        }
+      },
+      {
+        "id": "investigacion",
+        "label": "Investigación",
+        "icon": "magnifying-glass",
+        "music": {
+          "flag": [
+            "mr-simulacro-desatado",
+            "slug",
+            "ambiente-detective"
+          ]
+        }
+      }
+    ],
+    "effects": [],
+    "markers": {
+      "milestones": [
+        {
+          "id": "d1",
+          "label": "Día 1 · Recepción de Lux-Vista en París",
+          "public": true
+        },
+        {
+          "id": "d2",
+          "label": "Día 2 · Escándalo de Gonzaga y cena en Budapest",
+          "public": true
+        },
+        {
+          "id": "d3",
+          "label": "Día 3 · Laberinto de Buda y el Ritual de purificación",
+          "public": true
+        },
+        {
+          "id": "d4",
+          "label": "Día 4 · El Otro Lado, asesinatos y diario de 1923",
+          "public": true
+        },
+        {
+          "id": "d5",
+          "label": "Día 5 · El portal y la Mezquita Velada",
+          "public": true
+        }
+      ],
+      "clocks": [
+        {
+          "id": "simulacro",
+          "label": "El Simulacro de Carne",
+          "segments": 6,
+          "public": false,
+          "announce": false,
+          "phrases": [
+            "Brazo izquierdo",
+            "Brazo derecho",
+            "Pierna izquierda",
+            "Pierna derecha",
+            "Torso",
+            "Cabeza: el descendiente"
+          ]
+        }
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "portada"
+        ]
+      },
+      "order": 0,
+      "name": "Embarque en París",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.hQM9SeM7Hr92fagg"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "escena-1"
+        ]
+      },
+      "motifs": [
+        "embarque",
+        "investigacion"
+      ],
+      "cues": [
+        {
+          "label": "Traqueteo del tren",
+          "icon": "train",
+          "sound": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "tren"
+            ]
+          }
+        }
+      ],
+      "ambient": null,
+      "figures": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "giuseppe-roti"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "john-walters"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "enzo-banuelos"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "oscar-griffin"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "faustino-gonzaga"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "antonio-abella"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-1"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-2"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-3"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Día 1. Recepción de Lux-Vista y presentación de los ganadores.",
+      "thumb": ""
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "budapest"
+        ]
+      },
+      "order": 1,
+      "name": "Budapest y el Laberinto",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.1MZplLdHcaX9gBEE"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "escena-2"
+        ]
+      },
+      "motifs": [
+        "budapest",
+        "investigacion"
+      ],
+      "cues": [],
+      "ambient": null,
+      "figures": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "faustino-gonzaga"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "chantel-antin"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "henri-guillemette"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "john-milton"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-4"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Días 2 y 3. Escándalo de Gonzaga, tour opcional y el Laberinto de Buda.",
+      "thumb": ""
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "coches-mesa"
+        ]
+      },
+      "order": 2,
+      "name": "Coches cama F y G",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.UXTqAKOE0vBelZEh"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "escena-3"
+        ]
+      },
+      "motifs": [
+        "otro-lado",
+        "investigacion"
+      ],
+      "cues": [
+        {
+          "label": "Traqueteo del tren",
+          "icon": "train",
+          "sound": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "tren"
+            ]
+          }
+        }
+      ],
+      "ambient": null,
+      "figures": [],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-5"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-6"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Días 1 a 4 a bordo. Milton se mueve con la llave maestra; los asesinatos empiezan el lunes.",
+      "thumb": "",
+      "stage": {
+        "mode": "none"
+      }
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "coches-guardian"
+        ]
+      },
+      "order": 3,
+      "name": "Coches cama F y G (Guardián)",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.UXTqAKOE0vBelZEh"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "escena-3"
+        ]
+      },
+      "motifs": [
+        "otro-lado",
+        "investigacion"
+      ],
+      "cues": [
+        {
+          "label": "Traqueteo del tren",
+          "icon": "train",
+          "sound": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "tren"
+            ]
+          }
+        }
+      ],
+      "ambient": null,
+      "figures": [],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-5"
+            ]
+          },
+          "label": ""
+        },
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-6"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Días 1 a 4 a bordo. Milton se mueve con la llave maestra; los asesinatos empiezan el lunes.",
+      "thumb": "",
+      "stage": {
+        "mode": "none"
+      }
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "estambul-mesa"
+        ]
+      },
+      "order": 4,
+      "name": "Estambul 2013",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.siK0KVUydrQkwAhH"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "ambiente-detective"
+        ]
+      },
+      "motifs": [
+        "investigacion",
+        "mezquita"
+      ],
+      "cues": [],
+      "ambient": null,
+      "figures": [],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-6"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Día 5. El diario de Milton señala la Mezquita Velada.",
+      "thumb": "",
+      "stage": {
+        "mode": "none"
+      }
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "estambul-guardian"
+        ]
+      },
+      "order": 5,
+      "name": "Estambul 2013 (Guardián)",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.siK0KVUydrQkwAhH"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "ambiente-detective"
+        ]
+      },
+      "motifs": [
+        "investigacion",
+        "mezquita"
+      ],
+      "cues": [],
+      "ambient": null,
+      "figures": [],
+      "handouts": [
+        {
+          "ref": {
+            "flag": [
+              "mr-simulacro-desatado",
+              "slug",
+              "ayuda-6"
+            ]
+          },
+          "label": ""
+        }
+      ],
+      "notes": "Día 5. El diario de Milton señala la Mezquita Velada.",
+      "thumb": "",
+      "stage": {
+        "mode": "none"
+      }
+    },
+    {
+      "ref": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "mezquita"
+        ]
+      },
+      "order": 6,
+      "name": "La Mezquita Velada",
+      "reading": {
+        "uuid": "JournalEntry.F0PmPeWJbroiatiX.JournalEntryPage.siK0KVUydrQkwAhH"
+      },
+      "music": {
+        "flag": [
+          "mr-simulacro-desatado",
+          "slug",
+          "escena-4"
+        ]
+      },
+      "motifs": [
+        "mezquita"
+      ],
+      "cues": [],
+      "ambient": null,
+      "figures": [],
+      "handouts": [],
+      "notes": "Clímax. Milton, los soldados sin rostro y el Simulacro.",
+      "thumb": "",
+      "stage": {
+        "mode": "none"
+      }
+    }
+  ]
+}

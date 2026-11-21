@@ -1,0 +1,283 @@
+{
+  "format": "mr-pizarra-import",
+  "version": 1,
+  "mode": "board",
+  "title": "El Simulacro desatado · Pizarra de investigación",
+  "background": "corcho-claro",
+  "pinPreset": {
+    "pin": "auto",
+    "color": "",
+    "layout": "auto"
+  },
+  "layers": [
+    {
+      "ref": "ganadores",
+      "name": "Ganadores de Lux-Vista",
+      "revealed": true
+    },
+    {
+      "ref": "pasajeros",
+      "name": "Otros pasajeros y personal",
+      "revealed": true
+    },
+    {
+      "ref": "acosador",
+      "name": "El acosador de Chantel",
+      "revealed": false
+    },
+    {
+      "ref": "asesinatos",
+      "name": "Los asesinatos del Otro Lado",
+      "revealed": false
+    },
+    {
+      "ref": "milton",
+      "name": "La verdad de John Milton",
+      "revealed": false
+    }
+  ],
+  "items": [
+    {
+      "ref": "roti",
+      "type": "entity",
+      "name": "Giuseppe Roti",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 220,
+      "y": 220,
+      "w": 200,
+      "rot": -3
+    },
+    {
+      "ref": "walters",
+      "type": "entity",
+      "name": "John Walters",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 480,
+      "y": 220,
+      "w": 200,
+      "rot": 2
+    },
+    {
+      "ref": "banuelos",
+      "type": "entity",
+      "name": "Enzo Bañuelos",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 740,
+      "y": 220,
+      "w": 200,
+      "rot": -2
+    },
+    {
+      "ref": "griffin",
+      "type": "entity",
+      "name": "Oscar Griffin",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 1000,
+      "y": 220,
+      "w": 200,
+      "rot": 3
+    },
+    {
+      "ref": "gonzaga",
+      "type": "entity",
+      "name": "Faustino Gonzaga",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 1260,
+      "y": 220,
+      "w": 200,
+      "rot": -4
+    },
+    {
+      "ref": "abella",
+      "type": "entity",
+      "name": "Antonio Abella (Angelo Minotti)",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 1520,
+      "y": 220,
+      "w": 200,
+      "rot": 2
+    },
+    {
+      "ref": "chantel",
+      "type": "entity",
+      "name": "Chantel Antin",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "pasajeros",
+      "x": 220,
+      "y": 540,
+      "w": 200,
+      "rot": 2
+    },
+    {
+      "ref": "guillemette",
+      "type": "entity",
+      "name": "Henri Guillemette",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "pasajeros",
+      "x": 480,
+      "y": 540,
+      "w": 200,
+      "rot": -2
+    },
+    {
+      "ref": "wilson",
+      "type": "entity",
+      "name": "Mark Wilson",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "pasajeros",
+      "x": 740,
+      "y": 540,
+      "w": 200,
+      "rot": 3
+    },
+    {
+      "ref": "wyss",
+      "type": "entity",
+      "name": "Fabian Wyss",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "pasajeros",
+      "x": 1000,
+      "y": 540,
+      "w": 200,
+      "rot": -3
+    },
+    {
+      "ref": "farber",
+      "type": "entity",
+      "name": "Lars Färber",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "pasajeros",
+      "x": 1260,
+      "y": 540,
+      "w": 200,
+      "rot": 2
+    },
+    {
+      "ref": "milton-card",
+      "type": "entity",
+      "name": "John Milton",
+      "kind": "Actor",
+      "frame": "polaroid",
+      "showToAll": true,
+      "layer": "ganadores",
+      "x": 1520,
+      "y": 540,
+      "w": 210,
+      "rot": -1
+    },
+    {
+      "ref": "nota-acosador",
+      "type": "note",
+      "title": "«El amor de TU vida»",
+      "text": "Cartas con recortes a Chantel Antin.\nEn la cabina de Mark Wilson hay recortes, pegamento y un diario obsesivo.",
+      "color": "amber",
+      "layer": "acosador",
+      "x": 480,
+      "y": 840,
+      "w": 280,
+      "rot": -2
+    },
+    {
+      "ref": "nota-tiza",
+      "type": "note",
+      "title": "Marcas de tiza roja",
+      "text": "Bajo el somier de cada víctima hay dibujada con tiza roja la parte del cuerpo amputada post mortem.",
+      "color": "crimson",
+      "layer": "asesinatos",
+      "x": 920,
+      "y": 840,
+      "w": 280,
+      "rot": 1
+    },
+    {
+      "ref": "nota-diario-23",
+      "type": "note",
+      "title": "Diario de 1923",
+      "text": "Propiedad del Museo Británico. Aparece junto al 5.º cadáver: Hermanos de la Piel, Simulacro de Sedefkar y Ritual de purificación.",
+      "color": "parchment",
+      "layer": "asesinatos",
+      "x": 1240,
+      "y": 840,
+      "w": 280,
+      "rot": -2
+    },
+    {
+      "ref": "nota-simulacro",
+      "type": "note",
+      "title": "El Simulacro de Carne",
+      "text": "6 partes en los nichos de la Mezquita Velada (Estambul).\nMilton necesita morir en el círculo de sangre para poseerlo.",
+      "color": "crimson",
+      "layer": "milton",
+      "x": 1560,
+      "y": 840,
+      "w": 300,
+      "rot": 2
+    }
+  ],
+  "connections": [
+    {
+      "from": "chantel",
+      "to": "nota-acosador",
+      "color": "#b45309",
+      "layer": "acosador"
+    },
+    {
+      "from": "wilson",
+      "to": "nota-acosador",
+      "color": "#b45309",
+      "layer": "acosador"
+    },
+    {
+      "from": "roti",
+      "to": "nota-tiza",
+      "color": "#991b1b",
+      "layer": "asesinatos"
+    },
+    {
+      "from": "walters",
+      "to": "nota-tiza",
+      "color": "#991b1b",
+      "layer": "asesinatos"
+    },
+    {
+      "from": "gonzaga",
+      "to": "nota-diario-23",
+      "color": "#991b1b",
+      "layer": "asesinatos"
+    },
+    {
+      "from": "milton-card",
+      "to": "nota-simulacro",
+      "color": "#7f1d1d",
+      "layer": "milton"
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+/* MR- El Simulacro Desatado · Estética Art Déco Orient Express (oro latón, burdeos y azul nocturno).
+   Regla de la casa: NUNCA tocar font-family/font/all en button, i, .window-header ni *. */
+
+.mrsd-panel {
+  --oe-fondo: #14171f;
+  --oe-panel: color-mix(in oklab, var(--oe-fondo) 86%, #ffffff);
+  --oe-borde: color-mix(in oklab, #c9a25c 45%, transparent);
+  --oe-oro: #d8b56c;
+  --oe-burdeos: #8d2b2e;
+  --oe-texto: #ebe5d8;
+  --oe-suave: color-mix(in oklab, var(--oe-texto) 68%, transparent);
+}
+
+.mrsd-panel .window-content {
+  background: var(--oe-fondo);
+  color: var(--oe-texto);
+  padding: 0;
+  overflow: hidden;
+}
+
+.mrsd-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  container-type: inline-size;
+}
+
+.mrsd-cabecera {
+  padding: 10px 12px 0;
+  border-bottom: 1px solid var(--oe-borde);
+  background: color-mix(in oklab, var(--oe-fondo) 72%, #000000);
+}
+
+.mrsd-atajos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.mrsd-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.mrsd-tab {
+  flex: 1;
+  background: transparent;
+  color: var(--oe-suave);
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 7px 8px;
+  cursor: pointer;
+}
+
+.mrsd-tab.activa {
+  background: var(--oe-fondo);
+  color: var(--oe-oro);
+  border-color: var(--oe-borde);
+  font-weight: 600;
+}
+
+.mrsd-cuerpo {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mrsd-bloque {
+  background: var(--oe-panel);
+  border: 1px solid var(--oe-borde);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mrsd-fila-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--oe-oro);
+  border-bottom: 1px solid color-mix(in oklab, var(--oe-oro) 24%, transparent);
+  padding-bottom: 4px;
+}
+
+.mrsd-badge {
+  background: var(--oe-burdeos);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.mrsd-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mrsd-pill,
+.mrsd-btn-sec,
+.mrsd-btn-prim,
+.mrsd-btn-mini {
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid var(--oe-borde);
+  background: color-mix(in oklab, var(--oe-fondo) 75%, #2a2f3d);
+  color: var(--oe-texto);
+  font-size: 0.84rem;
+}
+
+.mrsd-pill.activa,
+.mrsd-btn-prim {
+  background: var(--oe-burdeos);
+  border-color: var(--oe-oro);
+  color: #fff;
+  font-weight: 600;
+}
+
+.mrsd-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mrsd-check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in oklab, var(--oe-borde) 55%, transparent);
+  background: color-mix(in oklab, var(--oe-fondo) 88%, #ffffff);
+  color: var(--oe-texto);
+  cursor: pointer;
+  font-size: 0.84rem;
+}
+
+.mrsd-check-row.hecha {
+  background: color-mix(in oklab, var(--oe-burdeos) 28%, var(--oe-fondo));
+  border-color: var(--oe-burdeos);
+  color: color-mix(in oklab, var(--oe-texto) 75%, transparent);
+}
+
+.mrsd-v-nom { flex: 1; }
+.mrsd-v-meta { font-size: 0.75rem; color: var(--oe-suave); }
+
+.mrsd-ayuda-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--oe-fondo) 88%, #ffffff);
+  font-size: 0.85rem;
+}
+
+.mrsd-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+@container (max-width: 420px) {
+  .mrsd-grid-2 { grid-template-columns: 1fr; }
+}
+
+.mrsd-subtitulo {
+  font-size: 0.78rem;
+  color: var(--oe-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.mrsd-actor-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in oklab, var(--oe-borde) 55%, transparent);
+  background: color-mix(in oklab, var(--oe-fondo) 86%, #ffffff);
+  color: var(--oe-texto);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.82rem;
+}
+
+.mrsd-actor-btn img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  object-fit: cover;
+}
+
+.mrsd-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 12px;
+  font-size: 0.76rem;
+  color: var(--oe-suave);
+  border-top: 1px solid var(--oe-borde);
+  background: color-mix(in oklab, var(--oe-fondo) 70%, #000000);
+}
+
+.mrsd-btn-link {
+  background: transparent;
+  border: none;
+  color: var(--oe-oro);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.mrsd-chat-card {
+  border: 1px solid #c9a25c;
+  border-left: 4px solid #8d2b2e;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #1a1d26;
+  color: #ebe5d8;
+}
+
+.mrsd-chat-card h3 {
+  margin: 0 0 4px;
+  color: #d8b56c;
+  font-size: 0.95rem;
+}
+
+.mrsd-chat-sub {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+.mrsd-settings-box {
+  margin-top: 10px;
+}
+
+.mrsd-settings-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.mrsd-credit {
+  font-size: 0.76rem;
+  opacity: 0.75;
+  margin: 4px 0 0;
+}

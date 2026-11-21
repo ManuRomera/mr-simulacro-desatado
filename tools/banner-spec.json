@@ -1,0 +1,13 @@
+[{"src": "/Volumes/Datos_Dock/FoundryVTT/Trabajo SIMULACRO/fuentes/Orient Express Escena.png", "focus": 0.55,
+  "accent": [201, 160, 92],
+  "kicker": "Horror en el Orient Express · Epílogo contemporáneo",
+  "title": ["El Simulacro", "desatado"],
+  "subtitle": "Estambul, 2013",
+  "tagline": ["La llamada de Cthulhu 7.ª ed. · Foundry VTT · Castellano"],
+  "fonts": {"kicker": ["/System/Library/Fonts/Supplemental/Copperplate.ttc", 0],
+            "title": ["/System/Library/Fonts/Supplemental/Didot.ttc", 2],
+            "subtitle": ["/System/Library/Fonts/Supplemental/Didot.ttc", 1],
+            "tagline": ["/System/Library/Fonts/Supplemental/Copperplate.ttc", 0]},
+  "colors": {"kicker": [201, 160, 92], "title": [243, 236, 220], "subtitle": [201, 160, 92], "tagline": [214, 210, 200]},
+  "title_max": 0.3, "title_lead": 0.9,
+  "out": "docs/img/banner.webp", "size": [1600, 560]}]

@@ -1,0 +1,71 @@
+{
+  "id": "mr-simulacro-desatado",
+  "title": "MR- El Simulacro Desatado",
+  "version": "1.0.0",
+  "description": "Horror en el Orient Express: Estambul 2013 — El Simulacro desatado (Mike Mason y Penelope Love). Aventura completa lista para dirigir en La llamada de Cthulhu 7.ª edición (CoC7) con 17 actores jugables, 7 escenas (mesa y Guardián, Mezquita Velada con muros y antorchas), 6 ayudas de juego, música y ambiente del Orient Express, Panel del Guardián e integración con MR- Dirección y MR- Pizarra.",
+  "authors": [
+    {
+      "name": "Manuel Romera Chinchilla",
+      "url": "https://github.com/ManuRomera"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/mr-simulacro.css"
+  ],
+  "languages": [
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "CoC7",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.0",
+          "verified": "8.16"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "mr-direccion",
+        "type": "module",
+        "manifest": "https://github.com/ManuRomera/mr-direccion/releases/latest/download/module.json"
+      },
+      {
+        "id": "mr-pizarra",
+        "type": "module",
+        "manifest": "https://github.com/ManuRomera/mr-pizarra/releases/latest/download/module.json"
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "aventura",
+      "label": "MR- El Simulacro Desatado",
+      "path": "packs/aventura",
+      "type": "Adventure",
+      "system": "CoC7",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "socket": true,
+  "url": "https://github.com/ManuRomera/mr-simulacro-desatado",
+  "manifest": "https://github.com/ManuRomera/mr-simulacro-desatado/releases/latest/download/module.json",
+  "download": "https://github.com/ManuRomera/mr-simulacro-desatado/releases/download/v1.0.0/mr-simulacro-desatado.zip"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "mr-simulacro-desatado",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "arte": "python3 tools/arte.py",
+    "audio": "python3 tools/audio.py",
+    "datos": "python3 tools/foundry.py",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "classic-level": "2.0.0",
+    "archiver": "7.0.1"
+  }
+}

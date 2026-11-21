@@ -1,0 +1,45 @@
+{
+  "MRSD": {
+    "Titulo": "MR- El Simulacro Desatado",
+    "SoloGM": "Solo el Guardián puede realizar esta acción.",
+    "Cancelar": "Cancelar",
+    "Barra": {
+      "Titulo": "MR- El Simulacro Desatado",
+      "Panel": "Panel del Guardián",
+      "Eco": "Tirar Eco del Otro Lado",
+      "Pizarra": "Pizarra de investigación (MR- Pizarra)"
+    },
+    "Importar": {
+      "Titulo": "MR- El Simulacro Desatado · Preparar mundo",
+      "Pregunta": "¿Cómo prefieres cargar «El Simulacro desatado» en este mundo?",
+      "Todo": "Importar todo al mundo",
+      "Compendios": "Dejar solo en el compendio",
+      "Aviso": "El mundo ya contiene documentos. ¿Importar o actualizar los documentos de «El Simulacro desatado»?",
+      "Si": "Importar aventura",
+      "SinPack": "No se encontró el compendio de aventura del módulo.",
+      "Empieza": "Importando «El Simulacro desatado»…",
+      "Hecho": "«El Simulacro desatado» importado y listo para dirigir."
+    },
+    "Integ": {
+      "NombrePizarra": "El Simulacro desatado · Pizarra de investigación",
+      "PizarraNo": "Activa el módulo recomendado «MR- Pizarra» para abrir la pizarra de investigación.",
+      "PizarraLista": "Pizarra precargada en MR- Pizarra: pulsa «Importar» para crearla."
+    },
+    "Panel": {
+      "Titulo": "Panel del Guardián · El Simulacro desatado",
+      "TabViaje": "Viaje y Víctimas",
+      "TabAyudas": "Ayudas y Tramas",
+      "TabReparto": "PNJ y Recompensas",
+      "ReinoReal": "Mundo real (2013)",
+      "ReinoOtro": "El Otro Lado",
+      "ReinoMezquita": "Mezquita Velada",
+      "Reiniciar": "Reiniciar progreso",
+      "ConfirmarReinicio": "¿Restablecer el día, el reino y las casillas de seguimiento al inicio del viaje?"
+    },
+    "Ajustes": {
+      "BotonPanel": "Abrir Panel del Guardián",
+      "BotonReimportar": "Reimportar aventura al mundo",
+      "BotonPizarra": "Abrir Pizarra de investigación"
+    }
+  }
+}
