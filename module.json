@@ -1,7 +1,7 @@
 {
   "id": "mr-simulacro-desatado",
   "title": "MR- El Simulacro Desatado",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Horror en el Orient Express: Estambul 2013 — El Simulacro desatado (Mike Mason y Penelope Love). Aventura completa lista para dirigir en La llamada de Cthulhu 7.ª edición (CoC7) con 17 actores jugables, 7 escenas (mesa y Guardián, Mezquita Velada con muros y antorchas), 6 ayudas de juego, música y ambiente del Orient Express, Panel del Guardián e integración con MR- Dirección y MR- Pizarra.",
   "authors": [
     {
@@ -67,5 +67,9 @@
   "socket": true,
   "url": "https://github.com/ManuRomera/mr-simulacro-desatado",
   "manifest": "https://github.com/ManuRomera/mr-simulacro-desatado/releases/latest/download/module.json",
-  "download": "https://github.com/ManuRomera/mr-simulacro-desatado/releases/download/v1.0.0/mr-simulacro-desatado.zip"
+  "download": "https://github.com/ManuRomera/mr-simulacro-desatado/releases/download/v1.0.1/mr-simulacro-desatado.zip",
+  "readme": "https://github.com/ManuRomera/mr-simulacro-desatado#readme",
+  "changelog": "https://github.com/ManuRomera/mr-simulacro-desatado/blob/main/CHANGELOG.md",
+  "bugs": "https://github.com/ManuRomera/mr-simulacro-desatado/issues",
+  "license": "https://github.com/ManuRomera/mr-simulacro-desatado/blob/main/NOTICE.md"
 }

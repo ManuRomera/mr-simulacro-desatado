@@ -2,7 +2,8 @@
 """Genera _data/aventura.json (Adventure completa para CoC7 v8.16 / Foundry v13-v14),
 content/direccion-es.json (MR- Dirección) y content/pizarra-es.json (MR- Pizarra).
 """
-import hashlib, json, os, sys
+import hashlib, json, math, os, sys
+PADDING = 0.1
 from pathlib import Path
 import shutil
 from PIL import Image
@@ -463,42 +464,32 @@ def hacer_playlists(fmap):
 
 # ---------------- Escenas ----------------
 def muros_mezquita():
-    """Muros perimetrales y divisiones principales de 06-mezquita-velada.webp (2101x1581)."""
-    def w(k, x1, y1, x2, y2, door=0):
-        return {
-            "_id": fid(f"wall:mez:{k}"),
-            "c": [x1, y1, x2, y2],
-            "light": 20, "move": 20, "sight": 20, "sound": 20,
-            "dir": 0, "door": door, "ds": 0, "flags": {},
-        }
-    return [
-        # Perímetro exterior principal de la sala
-        w("norte", 480, 175, 1620, 175),
-        w("oeste-n", 480, 175, 480, 580),
-        w("oeste-s", 480, 680, 480, 1185),
-        w("sur-o", 480, 1185, 920, 1185),
-        w("sur-e", 1340, 1185, 1620, 1185),
-        w("este-n", 1620, 175, 1620, 460),
-        w("este-s", 1620, 740, 1620, 1185),
-        # Habitación norte de partes de muertos (puerta en el muro sur)
-        w("hab-n-o", 1180, 175, 1180, 420),
-        w("hab-n-puerta", 1180, 420, 1300, 420, door=1),
-        w("hab-n-s", 1300, 420, 1620, 420),
-        # Sala de preparación + Habitación sur de partes de muertos
-        w("prep-o", 1180, 880, 1180, 1185),
-        w("prep-puerta", 1180, 880, 1330, 880, door=1),
-        w("hab-s-sep", 1330, 880, 1330, 1185),
-        w("hab-s-puerta", 1330, 880, 1460, 880, door=1),
-        w("hab-s-n", 1460, 880, 1620, 880),
-        # Cámara sudoeste (con puerta hacia sala principal)
-        w("cam-so-n", 480, 845, 895, 845),
-        w("cam-so-e", 895, 845, 895, 1085),
-        w("cam-so-puerta", 895, 1085, 895, 1185, door=1),
-        # Columna central (muro pequeño no bloquea todo) y acceso al túnel/tumba
-        w("tumba-o", 920, 1185, 920, 1445),
-        w("tumba-s", 920, 1445, 1340, 1445),
-        w("tumba-e", 1340, 1185, 1340, 1445),
-    ]
+    """Muros de 06-mezquita-velada.webp (2101x1581) trazados del propio plano: contorno de la masa
+    marrón (sin trazos finos ni marca), roca punteada de la tumba rellena, túnel y puertas a mano."""
+    import cv2, numpy as np
+    im = cv2.imread(str(ASSETS / "escenas" / "06-mezquita-velada.webp"))
+    b, g, r = (im[:, :, i].astype(int) for i in range(3))
+    masa = ((r < 190) & (r - b > 45) & (g < 150)).astype(np.uint8) * 255
+    masa[1400:, 1700:] = 0  # marca MR
+    masa[1140:] = cv2.morphologyEx(masa[1140:], cv2.MORPH_CLOSE, np.ones((31, 31), np.uint8))  # punteado de roca
+    masa = cv2.morphologyEx(masa, cv2.MORPH_CLOSE, np.ones((17, 17), np.uint8))
+    masa = cv2.morphologyEx(masa, cv2.MORPH_OPEN, np.ones((19, 19), np.uint8))  # quita hojas de puerta y puntos
+    contornos, _ = cv2.findContours(masa, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    segs = []
+    for c in contornos:
+        if cv2.contourArea(c) < 400:
+            continue
+        pts = cv2.approxPolyDP(c, 4, True)[:, 0].tolist()
+        segs += [(*pts[i], *pts[(i + 1) % len(pts)], 0) for i in range(len(pts))]
+    # Túnel (trazo fino) y puertas: cerradas en el hueco, en el lado de la bisagra del plano
+    linea = lambda *xy: [(*xy[i:i + 2], *xy[i + 2:i + 4], 0) for i in range(0, len(xy) - 2, 2)]
+    segs += linea(226, 1491, 226, 1444, 790, 1444, 790, 1358, 923, 1358) + linea(226, 1491, 845, 1491) + linea(925, 1208, 925, 1358)  # roca izquierda de la tumba
+    puertas = [(1222, 445, 1300, 445), (1598, 452, 1598, 487), (1713, 490, 1783, 490), (1795, 640, 1795, 695),
+               (1932, 640, 1932, 695), (1727, 835, 1793, 835), (1220, 905, 1285, 905), (1367, 905, 1442, 905),
+               (912, 1080, 912, 1117), (923, 1358, 923, 1405)]
+    segs += [(*d, 1) for d in puertas]
+    return [{"_id": fid(f"wall:mez:{i}"), "c": [int(v) for v in s4[:4]], "light": 20, "move": 20, "sight": 20,
+             "sound": 20, "dir": 0, "door": s4[4], "ds": 0, "flags": {}} for i, s4 in enumerate(segs)]
 
 def luces_mezquita():
     """Anillo de antorchas parpadeantes en los apliques de hierro de la Mezquita Velada."""
@@ -561,10 +552,16 @@ def hacer_escenas(fmap, pl_info):
         (ASSETS / thumb).parent.mkdir(exist_ok=True)
         with Image.open(ASSETS / img_rel) as im:
             im.convert("RGB").resize((400, round(400 * h / w)), Image.LANCZOS).save(ASSETS / thumb, "WEBP", quality=80)
+        # Muros y luces se dibujan en píxeles de la imagen; Foundry pone la imagen tras el margen
+        # (misma fórmula que SquareGrid.calculateDimensions; el margen va en pasos de 0,05).
+        ox = math.ceil(PADDING * w / gsize) * gsize
+        oy = math.ceil(PADDING * h / gsize) * gsize
+        muros = [{**m, "c": [m["c"][0] + ox, m["c"][1] + oy, m["c"][2] + ox, m["c"][3] + oy]} for m in extra.get("walls", [])]
+        luces = [{**l, "x": l["x"] + ox, "y": l["y"] + oy} for l in extra.get("lights", [])]
         mx, my, mw, mh = marca.caja_animada(w, h)
         tile = {"_id": fid(f"tile:{slug}:marca"),
                 "texture": {"src": R("marca/mr-marca.webm"), "scaleX": 1, "scaleY": 1, "tint": "#ffffff", "alphaThreshold": 0, "fit": "fill", "anchorX": 0.5, "anchorY": 0.5},
-                "x": mx, "y": my, "width": mw, "height": mh, "elevation": 0, "sort": 0, "rotation": 0, "alpha": 1, "hidden": False, "locked": True,
+                "x": mx + ox, "y": my + oy, "width": mw, "height": mh, "elevation": 0, "sort": 0, "rotation": 0, "alpha": 1, "hidden": False, "locked": True,
                 "restrictions": {"light": False, "weather": False}, "occlusion": {"mode": 0, "alpha": 0},
                 "video": {"loop": True, "autoplay": True, "volume": 0}, "flags": {}}
         escenas.append({
@@ -577,7 +574,7 @@ def hacer_escenas(fmap, pl_info):
             "background": {"src": R(img_rel), "anchorX": 0, "anchorY": 0, "offsetX": 0, "offsetY": 0, "scaleX": 1, "scaleY": 1},
             "width": w,
             "height": h,
-            "padding": 0.08,
+            "padding": PADDING,
             "backgroundColor": "#141012",
             "grid": {
                 "type": gtype,
@@ -594,8 +591,8 @@ def hacer_escenas(fmap, pl_info):
             "environment": {"darknessLevel": dark},
             "playlist": pl_id,
             "playlistSound": snd_id,
-            "walls": extra.get("walls", []),
-            "lights": extra.get("lights", []),
+            "walls": muros,
+            "lights": luces,
             "tokens": [],
             "notes": [],
             "tiles": [tile],
